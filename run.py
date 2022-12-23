@@ -11,49 +11,31 @@ def game_board():
     for row in game_grid:
         print(count, row)
         count = count + 1
-
+    
 game_board()
 
 
 
-
-
-
-
+def endGameP1():
+    print("Player 1 has won the game")
 
 def check_win():
     if (game_grid[0][0] == "x") and (game_grid[0][1] == "x") and (game_grid[0][2] == "x"):
-        print("player 1 wins game")
-        endGame()
+        endGameP1()
     if (game_grid[1][0] == "x") and (game_grid[1][1] == "x") and (game_grid[1][2] == "x"):
-        print("player 1 wins game")
-        endGame()
+        endGameP1()
     if (game_grid[2][0] == "x") and (game_grid[2][1] == "x") and (game_grid[2][2] == "x"):
-        print("player 1 wins game")
-        endGame()
+        endGameP1()
     if (game_grid[0][0] == "x") and (game_grid[1][0] == "x") and (game_grid[2][0] == "x"):
-        print("player 1 wins game")
-        endGame()
+        endGameP1()
     if (game_grid[0][1] == "x") and (game_grid[1][1] == "x") and (game_grid[2][1] == "x"):
-        print("player 1 wins game")
-        endGame()
+        endGameP1()
     if (game_grid[0][2] == "x") and (game_grid[1][2] == "x") and (game_grid[2][2] == "x"):
-        print("player 1 wins game")
-        endGame()
-
+        endGameP1()
     if (game_grid[0][0] == "x") and (game_grid[1][1] == "x") and (game_grid[2][2] == "x"):
-        print("player 1 wins game")
-        endGame()
+        endGameP1()
     if (game_grid[0][2] == "x") and (game_grid[1][1] == "x") and (game_grid[0][2] == "x"):
-        print("player 1 wins game")
-        endGame()
-
-
-
-
-
-
-
+        endGameP1()
 
 
 
