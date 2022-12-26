@@ -3,14 +3,15 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 
-game_grid = [["_", "_", "_"], ["_", "_", "_"],["_", "_", "_"]]
+game_grid = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 def game_board():
-    count = 0
-    print("    0    1    2")
-    for row in game_grid:
-        print(count, row)
-        count = count + 1
+
+    print(game_grid[0:3])
+    print(game_grid[3:6])
+    print(game_grid[6:9])
+
+    
     
 game_board()
 
@@ -61,22 +62,19 @@ def check_win_p2():
 
 def gamePlay ():
     
-    play1row = int(input("player one enter your row number   "))
-    play1col = int(input("player one enter column number     "))
-    game_grid[play1row][play1col]='x'
+    play1 = int(input("player one enter your number   "))
+    
+    game_grid[play1]='x'
 
     game_board()
     check_win_p1()
 
-    play2row = int(input("player 2 enter your row number   "))
-    play2col = int(input("player 2 enter column number     "))
-    game_grid[play2row][play2col]="0"
+    play2 = int(input("player 2 enter your number   "))
+    
+    game_grid[play2]="0"
 
     game_board()
     check_win_p2()
-
-    if 
-
     gamePlay()
 
 gamePlay()
