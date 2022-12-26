@@ -1,9 +1,9 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+import random
 
-
-game_grid = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+game_grid = ["_", "_", "_", "_", "_", "_", "_", "_", "_"]
 
 def game_board():
 
@@ -16,13 +16,28 @@ def game_board():
 game_board()
 
 
+def gamePlay ():
+    
+    play1 = int(input("player one enter your number   "))
+    
+    game_grid[play1]='x'
 
-def endGameP1():
-    print("Player 1 has won the game")
+    game_board()
+     
+    print("Computer playing....")
 
-def endGameP2():
-    print("Player 2 has won the game")
+    computerPlay = random.randint(0,8)
+    
+    game_grid[computerPlay]="0"
 
+    game_board()
+    
+    gamePlay()
+
+gamePlay()
+
+
+"""
 def check_win_p1():
     if (game_grid[0][0] == "x") and (game_grid[0][1] == "x") and (game_grid[0][2] == "x"):
         endGameP1()
@@ -79,4 +94,4 @@ def gamePlay ():
 
 gamePlay()
 
-
+"""
