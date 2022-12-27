@@ -20,15 +20,31 @@ def gamePlay ():
     
     play1 = int(input("player one enter your number   "))
     
-    game_grid[play1]='x'
+    if (game_grid[play1]=="x" ) or (game_grid[play1]=="0"):
+        print("Please Choose a number thats not already been played")
+        gamePlay()
+
+
+    else:
+        game_grid[play1]='x'
+    
 
     game_board()
      
     print("Computer playing....")
+    print("Computer playing....")
+
 
     computerPlay = random.randint(0,8)
+
+    if game_grid[computerPlay]=="x":
+        computerPlay = random.randint(0,8)
+
+    game_grid[computerPlay]=="0"
     
-    game_grid[computerPlay]="0"
+
+
+
 
     game_board()
     
