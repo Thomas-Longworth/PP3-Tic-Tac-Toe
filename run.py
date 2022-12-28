@@ -7,18 +7,51 @@ game_grid = ["_", "_", "_", "_", "_", "_", "_", "_", "_"]
 
 def game_board():
 
-    print(game_grid[0:3])
-    print(game_grid[3:6])
-    print(game_grid[6:9])
+    print("------------------")
+    print("  " +game_grid[0] + "  |  " + game_grid[1] + "  |  " + game_grid[2])
+    print("  " +game_grid[3] + "  |  " + game_grid[4] + "  |  " + game_grid[5])
+    print("  " +game_grid[6] + "  |  " + game_grid[7] + "  |  " + game_grid[8])
+    
+    print("------------------")
+
+
+
+
 
     
     
 game_board()
 
 
+
+def computerPlay():
+    print("Computer playing....")
+    print("Computer playing....")
+
+    compPlay = random.randint(0,8)
+    game_grid[compPlay]=="0"
+
+    if (game_grid[compPlay]=="x") or (game_grid[compPlay]=="0"):
+        print("eorroe")
+       
+    else:
+        print("unknown")
+
+    game_board()
+    gamePlay()
+
+
+
 def gamePlay ():
     
     play1 = int(input("player one enter your number   "))
+    if play1<0 or play1>8:
+        print("please choose number between 0 and 8!!!!!!!")
+        gamePlay()
+    
+        
+    
+    
     
     if (game_grid[play1]=="x" ) or (game_grid[play1]=="0"):
         print("Please Choose a number thats not already been played")
@@ -26,29 +59,14 @@ def gamePlay ():
 
 
     else:
-        game_grid[play1]='x'
+        game_grid[play1]="x"
     
 
     game_board()
-     
-    print("Computer playing....")
-    print("Computer playing....")
+
+    computerPlay()
 
 
-    computerPlay = random.randint(0,8)
-
-    if game_grid[computerPlay]=="x":
-        computerPlay = random.randint(0,8)
-
-    game_grid[computerPlay]=="0"
-    
-
-
-
-
-    game_board()
-    
-    gamePlay()
 
 gamePlay()
 
