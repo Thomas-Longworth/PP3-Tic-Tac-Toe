@@ -26,15 +26,20 @@ game_board()
 
 def computerPlay():
     
-    print("Computer playing....")
-    time.sleep(1)
-    print("Computer playing....")
-    time.sleep(1)
-    print("Computer playing....")
+   
+    compPlay = random.randint(1,6)
+
+    if (game_grid[compPlay]=="x" ) or (game_grid[compPlay]=="0"):
+        computerPlay()
+    else:
+        print("Computer playing....")
+        time.sleep(0.5)
+        print("Computer playing....")
+        time.sleep(0.5)
+        print("Computer playing....")
+        game_grid[compPlay]="o"
 
     
-    game_grid[5]="o"
-    print(game_grid)
 
 
 
