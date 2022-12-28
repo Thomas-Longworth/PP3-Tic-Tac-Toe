@@ -2,16 +2,16 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
+import time
 
 game_grid = ["_", "_", "_", "_", "_", "_", "_", "_", "_"]
 
 def game_board():
 
     print("------------------")
-    print("  " +game_grid[0] + "  |  " + game_grid[1] + "  |  " + game_grid[2])
-    print("  " +game_grid[3] + "  |  " + game_grid[4] + "  |  " + game_grid[5])
-    print("  " +game_grid[6] + "  |  " + game_grid[7] + "  |  " + game_grid[8])
-    
+    print("  " + game_grid[0] + "  |  " + game_grid[1] + "  |  " + game_grid[2])
+    print("  " + game_grid[3] + "  |  " + game_grid[4] + "  |  " + game_grid[5])
+    print("  " + game_grid[6] + "  |  " + game_grid[7] + "  |  " + game_grid[8])
     print("------------------")
 
 
@@ -25,18 +25,20 @@ game_board()
 
 
 def computerPlay():
+    
     print("Computer playing....")
+    time.sleep(1)
+    print("Computer playing....")
+    time.sleep(1)
     print("Computer playing....")
 
-    compPlay = random.randint(0,8)
-    game_grid[compPlay]=="0"
+    
+    game_grid[5]="o"
+    print(game_grid)
 
-    if (game_grid[compPlay]=="x") or (game_grid[compPlay]=="0"):
-        print("eorroe")
-       
-    else:
-        print("unknown")
 
+
+   
     game_board()
     gamePlay()
 
