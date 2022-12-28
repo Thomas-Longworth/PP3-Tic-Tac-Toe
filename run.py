@@ -1,10 +1,10 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# Write your code to eXpect a terminal of 80 characters wide and 24 rows high
 import random
 import time
 
-game_grid = ["_", "_", "_", "_", "_", "_", "_", "_", "_"]
+game_grid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 def game_board():
 
@@ -23,27 +23,65 @@ def game_board():
 game_board()
 
 
+def endGameP1():
+    print("player 1 win")
+
+def endGameP2():
+    print("computer1 win")
+def checkP1win():
+    if (game_grid[0] == "X") and (game_grid[1] == "X") and (game_grid[2] == "X"):
+        endGameP1()
+    if (game_grid[3] == "X") and (game_grid[4] == "X") and (game_grid[5]== "X"):
+        endGameP1()
+    if (game_grid[6] == "X") and (game_grid[7] == "X") and (game_grid[8] == "X"):
+        endGameP1()
+    if (game_grid[0] == "X") and (game_grid[3] == "X") and (game_grid[6]== "X"):
+        endGameP1()
+    if (game_grid[1]== "X") and (game_grid[4]== "X") and (game_grid[7]== "X"):
+        endGameP1()
+    if (game_grid[2] == "X") and (game_grid[5]== "X") and (game_grid[8]== "X"):
+        endGameP1()
+    if (game_grid[0]== "X") and (game_grid[4] == "X") and (game_grid[8] == "X"):
+        endGameP1()
+    if (game_grid[2] == "X") and (game_grid[4] == "X") and (game_grid[6] == "X"):
+        endGameP1()
+
+def checkCompWin():
+    if (game_grid[O][0] == "O") and (game_grid[0][1] == "O") and (game_grid[0][2] == "O"):
+        endGameP2()
+    if (game_grid[1][0] == "O") and (game_grid[1][1] == "O") and (game_grid[1][2] == "O"):
+        endGameP2()
+    if (game_grid[2][0] == "O") and (game_grid[2][1] == "O") and (game_grid[2][2] == "O"):
+        endGameP2()
+    if (game_grid[0][0] == "O") and (game_grid[1][0] == "O") and (game_grid[2][0] == "O"):
+        endGameP2()
+    if (game_grid[0][1] == "O") and (game_grid[1][1] == "O") and (game_grid[2][1] == "O"):
+        endGameP2()
+    if (game_grid[0][2] == "O") and (game_grid[1][2] == "O") and (game_grid[2][2] == "O"):
+        endGameP2()
+    if (game_grid[0][0] == "O") and (game_grid[1][1] == "O") and (game_grid[2][2] == "O"):
+        endGameP2()
+    if (game_grid[0][2] == "O") and (game_grid[1][1] == "O") and (game_grid[0][2] == "0"):
+        endGameP2()
+
+
+
 
 def computerPlay():
     
    
     compPlay = random.randint(1,6)
 
-    if (game_grid[compPlay]=="x" ) or (game_grid[compPlay]=="0"):
+    if (game_grid[compPlay]=="X" ) or (game_grid[compPlay]=="O"):
         computerPlay()
     else:
         print("Computer playing....")
         time.sleep(0.5)
-        print("Computer playing....")
+        print("....")
         time.sleep(0.5)
-        print("Computer playing....")
-        game_grid[compPlay]="o"
-
-    
-
-
-
-   
+        print("....")
+        time.sleep(0.5)
+        game_grid[compPlay]="O"
     game_board()
     gamePlay()
 
@@ -60,13 +98,13 @@ def gamePlay ():
     
     
     
-    if (game_grid[play1]=="x" ) or (game_grid[play1]=="0"):
+    if (game_grid[play1]=="X" ) or (game_grid[play1]=="O"):
         print("Please Choose a number thats not already been played")
         gamePlay()
 
 
     else:
-        game_grid[play1]="x"
+        game_grid[play1]="X"
     
 
     game_board()
@@ -78,61 +116,3 @@ def gamePlay ():
 gamePlay()
 
 
-"""
-def check_win_p1():
-    if (game_grid[0][0] == "x") and (game_grid[0][1] == "x") and (game_grid[0][2] == "x"):
-        endGameP1()
-    if (game_grid[1][0] == "x") and (game_grid[1][1] == "x") and (game_grid[1][2] == "x"):
-        endGameP1()
-    if (game_grid[2][0] == "x") and (game_grid[2][1] == "x") and (game_grid[2][2] == "x"):
-        endGameP1()
-    if (game_grid[0][0] == "x") and (game_grid[1][0] == "x") and (game_grid[2][0] == "x"):
-        endGameP1()
-    if (game_grid[0][1] == "x") and (game_grid[1][1] == "x") and (game_grid[2][1] == "x"):
-        endGameP1()
-    if (game_grid[0][2] == "x") and (game_grid[1][2] == "x") and (game_grid[2][2] == "x"):
-        endGameP1()
-    if (game_grid[0][0] == "x") and (game_grid[1][1] == "x") and (game_grid[2][2] == "x"):
-        endGameP1()
-    if (game_grid[0][2] == "x") and (game_grid[1][1] == "x") and (game_grid[0][2] == "x"):
-        endGameP1()
-
-def check_win_p2():
-    if (game_grid[0][0] == "0") and (game_grid[0][1] == "0") and (game_grid[0][2] == "0"):
-        endGameP2()
-    if (game_grid[1][0] == "0") and (game_grid[1][1] == "0") and (game_grid[1][2] == "0"):
-        endGameP2()
-    if (game_grid[2][0] == "0") and (game_grid[2][1] == "0") and (game_grid[2][2] == "0"):
-        endGameP2()
-    if (game_grid[0][0] == "0") and (game_grid[1][0] == "0") and (game_grid[2][0] == "0"):
-        endGameP2()
-    if (game_grid[0][1] == "0") and (game_grid[1][1] == "0") and (game_grid[2][1] == "0"):
-        endGameP2()
-    if (game_grid[0][2] == "0") and (game_grid[1][2] == "0") and (game_grid[2][2] == "0"):
-        endGameP2()
-    if (game_grid[0][0] == "0") and (game_grid[1][1] == "0") and (game_grid[2][2] == "0"):
-        endGameP2()
-    if (game_grid[0][2] == "0") and (game_grid[1][1] == "0") and (game_grid[0][2] == "0"):
-        endGameP2()
-
-
-def gamePlay ():
-    
-    play1 = int(input("player one enter your number   "))
-    
-    game_grid[play1]='x'
-
-    game_board()
-    check_win_p1()
-
-    play2 = int(input("player 2 enter your number   "))
-    
-    game_grid[play2]="0"
-
-    game_board()
-    check_win_p2()
-    gamePlay()
-
-gamePlay()
-
-"""
