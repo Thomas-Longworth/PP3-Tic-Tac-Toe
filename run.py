@@ -14,13 +14,31 @@ def game_board():
     print("  " + game_grid[6] + "  |  " + game_grid[7] + "  |  " + game_grid[8])
     print("------------------")
 
-
-
-
-
-    
-    
+ 
 game_board()
+
+
+def gamePlay ():
+    
+    play1 = int(input("player one enter your number   "))
+    if play1<0 or play1>8:
+        print("please choose number between 0 and 8!!!!!!!")
+        gamePlay() 
+
+    if (game_grid[play1]=="X" ) or (game_grid[play1]=="O"):
+        print("Please Choose a number thats not already been played")
+        gamePlay()
+
+
+    else:
+        game_grid[play1]="X"
+    
+
+    game_board()
+
+    computerPlay()
+
+
 
 
 def endGameP1():
@@ -28,8 +46,32 @@ def endGameP1():
 
 def endGameP2():
     print("computer1 win")
+
+
+
+def computerPlay():
+
+    compPlay = random.randint(0,8)
+
+    if (game_grid[compPlay]=="X" ) or (game_grid[compPlay]=="O"):
+        computerPlay()
+    else:
+        print("Computer playing....")
+        time.sleep(0.5)
+        print("....")
+        time.sleep(0.5)
+        print("....")
+        time.sleep(0.5)
+        game_grid[compPlay]="O"
+    game_board()
+    gamePlay()
+
+
+
+
 def checkP1win():
     if (game_grid[0] == "X") and (game_grid[1] == "X") and (game_grid[2] == "X"):
+        return ("win")
         endGameP1()
     if (game_grid[3] == "X") and (game_grid[4] == "X") and (game_grid[5]== "X"):
         endGameP1()
@@ -47,69 +89,24 @@ def checkP1win():
         endGameP1()
 
 def checkCompWin():
-    if (game_grid[O][0] == "O") and (game_grid[0][1] == "O") and (game_grid[0][2] == "O"):
+    if (game_grid[O] == "O") and (game_grid[0] == "O") and (game_grid[0] == "O"):
         endGameP2()
-    if (game_grid[1][0] == "O") and (game_grid[1][1] == "O") and (game_grid[1][2] == "O"):
+    if (game_grid[1] == "O") and (game_grid[1] == "O") and (game_grid[1] == "O"):
         endGameP2()
-    if (game_grid[2][0] == "O") and (game_grid[2][1] == "O") and (game_grid[2][2] == "O"):
+    if (game_grid[2] == "O") and (game_grid[2]== "O") and (game_grid[2] == "O"):
         endGameP2()
-    if (game_grid[0][0] == "O") and (game_grid[1][0] == "O") and (game_grid[2][0] == "O"):
+    if (game_grid[0] == "O") and (game_grid[1] == "O") and (game_grid[2] == "O"):
         endGameP2()
-    if (game_grid[0][1] == "O") and (game_grid[1][1] == "O") and (game_grid[2][1] == "O"):
+    if (game_grid[0] == "O") and (game_grid[1] == "O") and (game_grid[2] == "O"):
         endGameP2()
-    if (game_grid[0][2] == "O") and (game_grid[1][2] == "O") and (game_grid[2][2] == "O"):
+    if (game_grid[0] == "O") and (game_grid[1] == "O") and (game_grid[2] == "O"):
         endGameP2()
-    if (game_grid[0][0] == "O") and (game_grid[1][1] == "O") and (game_grid[2][2] == "O"):
+    if (game_grid[0] == "O") and (game_grid[1] == "O") and (game_grid[2] == "O"):
         endGameP2()
     if (game_grid[0][2] == "O") and (game_grid[1][1] == "O") and (game_grid[0][2] == "0"):
         endGameP2()
 
 
-
-
-def computerPlay():
-    
-   
-    compPlay = random.randint(1,6)
-
-    if (game_grid[compPlay]=="X" ) or (game_grid[compPlay]=="O"):
-        computerPlay()
-    else:
-        print("Computer playing....")
-        time.sleep(0.5)
-        print("....")
-        time.sleep(0.5)
-        print("....")
-        time.sleep(0.5)
-        game_grid[compPlay]="O"
-    game_board()
-    gamePlay()
-
-
-
-def gamePlay ():
-    
-    play1 = int(input("player one enter your number   "))
-    if play1<0 or play1>8:
-        print("please choose number between 0 and 8!!!!!!!")
-        gamePlay()
-    
-        
-    
-    
-    
-    if (game_grid[play1]=="X" ) or (game_grid[play1]=="O"):
-        print("Please Choose a number thats not already been played")
-        gamePlay()
-
-
-    else:
-        game_grid[play1]="X"
-    
-
-    game_board()
-
-    computerPlay()
 
 
 
