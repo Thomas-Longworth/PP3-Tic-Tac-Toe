@@ -17,7 +17,14 @@ def game_board():
  
 game_board()
 
+
+    
+    
+
+
+
 def gamePlay ():
+    
     
     play1 = int(input("player one enter your number   "))
     if play1 < 0 or play1 > 8:
@@ -32,11 +39,19 @@ def gamePlay ():
 
     else:
         game_grid[play1]="X"
+        checkP1win()
         
         
-    checkP1win()
+
+        
+
+        
+    
+    
 
     game_board()
+   
+    
     computerPlay()
 
 def computerPlay():
@@ -62,21 +77,26 @@ def checkP1win():
     if (game_grid[0] == "X") and (game_grid[1] == "X") and (game_grid[2] == "X"):
         endGameP1()
         
-       
-    if (game_grid[3] == "X") and (game_grid[4] == "X") and (game_grid[5]== "X"):
+        
+    elif (game_grid[3] == "X") and (game_grid[4] == "X") and (game_grid[5]== "X"):
         endGameP1()
-    if (game_grid[6] == "X") and (game_grid[7] == "X") and (game_grid[8] == "X"):
+    elif (game_grid[6] == "X") and (game_grid[7] == "X") and (game_grid[8] == "X"):
         endGameP1()
-    if (game_grid[0] == "X") and (game_grid[3] == "X") and (game_grid[6]== "X"):
+    elif (game_grid[0] == "X") and (game_grid[3] == "X") and (game_grid[6]== "X"):
         endGameP1()
-    if (game_grid[1]== "X") and (game_grid[4]== "X") and (game_grid[7]== "X"):
+    elif (game_grid[1]== "X") and (game_grid[4]== "X") and (game_grid[7]== "X"):
         endGameP1()
-    if (game_grid[2] == "X") and (game_grid[5]== "X") and (game_grid[8]== "X"):
+    elif (game_grid[2] == "X") and (game_grid[5]== "X") and (game_grid[8]== "X"):
         endGameP1()
-    if (game_grid[0]== "X") and (game_grid[4] == "X") and (game_grid[8] == "X"):
+    elif (game_grid[0]== "X") and (game_grid[4] == "X") and (game_grid[8] == "X"):
         endGameP1()
-    if (game_grid[2] == "X") and (game_grid[4] == "X") and (game_grid[6] == "X"):
+    elif (game_grid[2] == "X") and (game_grid[4] == "X") and (game_grid[6] == "X"):
         endGameP1()
+    
+    
+
+      
+        
 
 def checkCompWin():
     if (game_grid[O] == "O") and (game_grid[0] == "O") and (game_grid[0] == "O"):
@@ -97,6 +117,11 @@ def checkCompWin():
         endGameP2()
 
 
+
+
+def endGameP2():
+    print("computer1 win")
+
 def endGameP1():
     time.sleep(0.5)
     print("....")
@@ -105,10 +130,7 @@ def endGameP1():
     print("....")
     print("player 1 win")
 
-def endGameP2():
-    print("computer1 win")
-
-
+    
 
 gamePlay()
 
