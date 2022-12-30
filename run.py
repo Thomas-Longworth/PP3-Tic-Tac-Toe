@@ -3,8 +3,11 @@
 # Write your code to eXpect a terminal of 80 characters wide and 24 rows high
 import random
 import time
+import sys
 
 game_grid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+instructions = "Welcome to the this Tic Tac Toe game"
+
 
 def game_board():
 
@@ -115,8 +118,12 @@ def endGameP1():
     print("....")
     print("player 1 win")
 
-    
 
-gamePlay()
+def startProgram():
+    for char in instructions:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.05)
 
 
+startProgram()
