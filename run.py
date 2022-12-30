@@ -18,11 +18,6 @@ def game_board():
 game_board()
 
 
-    
-    
-
-
-
 def gamePlay ():
     
     
@@ -30,7 +25,8 @@ def gamePlay ():
     if play1 < 0 or play1 > 8:
         print("please choose number between 0 and 8!!!!!!!")
         gamePlay() 
-        
+    
+    
 
     if (game_grid[play1]=="X" ) or (game_grid[play1]=="O"):
         print("Please Choose a number thats not already been played")
@@ -40,14 +36,6 @@ def gamePlay ():
     else:
         game_grid[play1]="X"
         checkP1win()
-        
-        
-
-        
-
-        
-    
-    
 
     game_board()
    
@@ -73,11 +61,8 @@ def computerPlay():
 
 
 def checkP1win():
-    
     if (game_grid[0] == "X") and (game_grid[1] == "X") and (game_grid[2] == "X"):
-        endGameP1()
-        
-        
+        endGameP1()       
     elif (game_grid[3] == "X") and (game_grid[4] == "X") and (game_grid[5]== "X"):
         endGameP1()
     elif (game_grid[6] == "X") and (game_grid[7] == "X") and (game_grid[8] == "X"):
