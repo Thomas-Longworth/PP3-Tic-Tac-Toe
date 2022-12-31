@@ -6,7 +6,13 @@ import time
 import sys
 
 game_grid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-instructions = "Welcome to the this Tic Tac Toe game"
+instructions = """Welcome to the this Tic Tac Toe game,
+
+
+
+
+"""
+sampleGrid=["0", "1", "2", "3", "4", "5", "6", "7", "8"]
 
 
 def game_board():
@@ -18,10 +24,12 @@ def game_board():
     print("------------------")
 
  
-game_board()
+
 
 
 def gamePlay ():
+
+    game_board()
     
     
     play1 = int(input("player one enter your number   "))
@@ -124,6 +132,22 @@ def startProgram():
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(0.05)
+
+    time.sleep(0.5)
+    print("------------------")
+    print("  " + sampleGrid[0] + "  |  " + sampleGrid[1] + "  |  " + sampleGrid[2])
+    print("  " + sampleGrid[3] + "  |  " + sampleGrid[4] + "  |  " + sampleGrid[5])
+    print("  " + sampleGrid[6] + "  |  " + sampleGrid[7] + "  |  " + sampleGrid[8])
+    print("------------------")
+
+    time.sleep(0.5)
+
+
+
+
+
+    gamePlay ()
+
 
 
 startProgram()
