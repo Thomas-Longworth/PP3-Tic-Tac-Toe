@@ -8,11 +8,13 @@ import sys
 game_grid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 instructions = """Welcome to the this Tic Tac Toe game,
 
-
-
-
+* The player can play by choosing a number from 0-8,
+* A winner is decided when the player or computer gets
+three symbols in a row,
+* If all 9 grid places are played with no winners it 
+will be a draw. 
 """
-sampleGrid=["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+sample_grid=["0", "1", "2", "3", "4", "5", "6", "7", "8"]
 
 
 def game_board():
@@ -27,7 +29,7 @@ def game_board():
 
 
 
-def gamePlay ():
+def game_play ():
 
     game_board()
     
@@ -35,13 +37,13 @@ def gamePlay ():
     play1 = int(input("player one enter your number   "))
     if play1 < 0 or play1 > 8:
         print("please choose number between 0 and 8!!!!!!!")
-        gamePlay() 
+        game_play() 
     
     
 
     if (game_grid[play1]=="X" ) or (game_grid[play1]=="O"):
         print("Please Choose a number thats not already been played")
-        gamePlay()
+        game_play()
 
 
     else:
@@ -67,8 +69,9 @@ def computerPlay():
         print("....")
         time.sleep(0.5)
         game_grid[compPlay]="O"
+
     game_board()
-    gamePlay()
+    game_play()
 
 
 def checkP1win():
@@ -127,7 +130,7 @@ def endGameP1():
     print("player 1 win")
 
 
-def startProgram():
+def start_program():
     for char in instructions:
         sys.stdout.write(char)
         sys.stdout.flush()
@@ -135,19 +138,24 @@ def startProgram():
 
     time.sleep(0.5)
     print("------------------")
-    print("  " + sampleGrid[0] + "  |  " + sampleGrid[1] + "  |  " + sampleGrid[2])
-    print("  " + sampleGrid[3] + "  |  " + sampleGrid[4] + "  |  " + sampleGrid[5])
-    print("  " + sampleGrid[6] + "  |  " + sampleGrid[7] + "  |  " + sampleGrid[8])
+    print("  " + sample_grid[0] + "  |  " + sample_grid[1] + "  |  " + sample_grid[2])
+    print("  " + sample_grid[3] + "  |  " + sample_grid[4] + "  |  " + sample_grid[5])
+    print("  " + sample_grid[6] + "  |  " + sample_grid[7] + "  |  " + sample_grid[8])
     print("------------------")
 
     time.sleep(0.5)
 
+    player_name = input("What is your name?   ")
+
+    user_input= input( f"{player_name}, To play, the game, type the letter 'P' ")
+    if user_input=="P":
+        game_play()
 
 
 
 
-    gamePlay ()
+  
 
 
 
-startProgram()
+start_program()
