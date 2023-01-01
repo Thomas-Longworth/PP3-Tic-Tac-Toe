@@ -117,6 +117,7 @@ def end_game_comp():
     
 
 def endGameP1():
+    game_board()
     time.sleep(0.5)
     print("....")
     print("player 1 win")
@@ -125,8 +126,7 @@ def endGameP1():
     print("player 1 win")
 
     end_input = input("would you like to play again?")
-    for elem in game_grid:
-        elem="-"
+    
    
 
     reset_game()
@@ -159,6 +159,17 @@ def start_program():
 
 
 def reset_game():
+
+    game_grid[0]="-"
+    game_grid[1]="-"
+    game_grid[2]="-"
+    game_grid[3]="-"
+    game_grid[4]="-"
+    game_grid[5]="-"
+    game_grid[6]="-"
+    game_grid[7]="-"
+    game_grid[8]="-"
+
     
     game_play()
 
