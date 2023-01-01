@@ -5,9 +5,19 @@ import random
 import time
 import sys
 
+#This is the grid list for the game
 game_grid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+
+
+#These are variables for keeping the scores of the game
+computer_score=0
+
+draw_score=0
+
+
+#Instructions for plaing the game
 instructions = """Welcome to the this Tic Tac Toe game,
-* THe game board is 3x3 grid as shown below,
+* The game board is 3x3 grid as shown below,
 * The player can play by choosing a number from 0-8,
 * A winner is decided when the player or computer gets
 three symbols in a row,
@@ -16,7 +26,7 @@ will be a draw.
 """
 sample_grid=["0", "1", "2", "3", "4", "5", "6", "7", "8"]
 
-
+#Function for displaying the game board
 def game_board():
 
     print("------------------")
@@ -27,12 +37,9 @@ def game_board():
 
 
 
-
+#This is the function for the main gameplay loop
 def game_play ():
-
     game_board()
-    
-    
     play1 = int(input("player one enter your number   "))
     if play1 < 0 or play1 > 8:
         print("please choose number between 0 and 8!!!!!!!")
@@ -43,7 +50,6 @@ def game_play ():
         print("Please Choose a number thats not already been played")
         game_play()
 
-
     else:
         game_grid[play1]="X"
         checkP1win()
@@ -53,6 +59,7 @@ def game_play ():
     
     computerPlay()
 
+#Function for the computer to play on the board
 def computerPlay():
 
     compPlay = random.randint(0,8)
@@ -112,25 +119,32 @@ def checkCompWin():
     if (game_grid[2] == "O") and (game_grid[4] == "O") and (game_grid[6] == "0"):
         end_game_comp()
 
-def end_game_comp():
-    print("computer1 win")
+
     
 
+
+def end_game_comp():
+    print("computer1 win")
+    computer_score +=1
 def endGameP1():
     game_board()
+    player_score=0
+
+    player_score +=1
+
     time.sleep(0.5)
     print("....")
     print("player 1 win")
     time.sleep(0.5)
-    print("....")
-    print("player 1 win")
+  
+    print(player_score)
+
 
     end_input = input("would you like to play again?")
     
    
 
     reset_game()
-
 
 def start_program():
     for char in instructions:
@@ -149,7 +163,7 @@ def start_program():
 
     player_name = input("What is your name?   ")
 
-    user_input= input( f"{player_name}, To play, the game, type the letter 'p' ")
+    user_input= input( f"{player_name}, To play the game, type the letter 'p' \n ")
     if user_input.lower()=="p":
         game_play()
 
@@ -170,7 +184,6 @@ def reset_game():
     game_grid[7]="-"
     game_grid[8]="-"
 
-    
     game_play()
 
 
