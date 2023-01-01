@@ -25,7 +25,9 @@ def game_board():
     print("  " + game_grid[6] + "  |  " + game_grid[7] + "  |  " + game_grid[8])
     print("------------------")
 
- 
+
+
+
 def game_play ():
 
     game_board()
@@ -54,22 +56,21 @@ def game_play ():
 def computerPlay():
 
     compPlay = random.randint(0,8)
-    allnum = game_grid[0:8]
+    
    
     if (game_grid[compPlay]=="X" ) or (game_grid[compPlay]=="O"):
         computerPlay()
-    
-    if allnum =="X"or allnum=="O":
-        print("fin")
-    else:
+    elif game_grid[compPlay]=="-":
         print("Computer playing....")
         time.sleep(0.5)
         print("....")
         time.sleep(0.5)
         print("....")
         time.sleep(0.5)
+
         game_grid[compPlay]="O"
 
+    
     game_board()
     game_play()
 
@@ -113,7 +114,7 @@ def checkCompWin():
 
 def end_game_comp():
     print("computer1 win")
-    comput
+    
 
 def endGameP1():
     time.sleep(0.5)
@@ -122,6 +123,13 @@ def endGameP1():
     time.sleep(0.5)
     print("....")
     print("player 1 win")
+
+    end_input = input("would you like to play again?")
+    for elem in game_grid:
+        elem="-"
+   
+
+    reset_game()
 
 
 def start_program():
@@ -148,11 +156,13 @@ def start_program():
     else:
         print("error")
 
-1
 
 
+def reset_game():
+    
+    game_play()
 
-  
+
 
 
 
