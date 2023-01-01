@@ -7,7 +7,7 @@ import sys
 
 game_grid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 instructions = """Welcome to the this Tic Tac Toe game,
-
+* THe game board is 3x3 grid as shown below,
 * The player can play by choosing a number from 0-8,
 * A winner is decided when the player or computer gets
 three symbols in a row,
@@ -26,9 +26,6 @@ def game_board():
     print("------------------")
 
  
-
-
-
 def game_play ():
 
     game_board()
@@ -38,7 +35,6 @@ def game_play ():
     if play1 < 0 or play1 > 8:
         print("please choose number between 0 and 8!!!!!!!")
         game_play() 
-    
     
 
     if (game_grid[play1]=="X" ) or (game_grid[play1]=="O"):
@@ -58,9 +54,13 @@ def game_play ():
 def computerPlay():
 
     compPlay = random.randint(0,8)
-
+    allnum = game_grid[0:8]
+   
     if (game_grid[compPlay]=="X" ) or (game_grid[compPlay]=="O"):
         computerPlay()
+    
+    if allnum =="X"or allnum=="O":
+        print("fin")
     else:
         print("Computer playing....")
         time.sleep(0.5)
@@ -92,34 +92,28 @@ def checkP1win():
     elif (game_grid[2] == "X") and (game_grid[4] == "X") and (game_grid[6] == "X"):
         endGameP1()
     
-    
-
-      
-        
 
 def checkCompWin():
-    if (game_grid[O] == "O") and (game_grid[0] == "O") and (game_grid[0] == "O"):
-        endGameP2()
-    if (game_grid[1] == "O") and (game_grid[1] == "O") and (game_grid[1] == "O"):
-        endGameP2()
-    if (game_grid[2] == "O") and (game_grid[2]== "O") and (game_grid[2] == "O"):
-        endGameP2()
-    if (game_grid[0] == "O") and (game_grid[1] == "O") and (game_grid[2] == "O"):
-        endGameP2()
-    if (game_grid[0] == "O") and (game_grid[1] == "O") and (game_grid[2] == "O"):
-        endGameP2()
-    if (game_grid[0] == "O") and (game_grid[1] == "O") and (game_grid[2] == "O"):
-        endGameP2()
-    if (game_grid[0] == "O") and (game_grid[1] == "O") and (game_grid[2] == "O"):
-        endGameP2()
-    if (game_grid[0][2] == "O") and (game_grid[1][1] == "O") and (game_grid[0][2] == "0"):
-        endGameP2()
+    if (game_grid[O] == "O") and (game_grid[1] == "O") and (game_grid[2] == "O"):
+        end_game_comp()
+    if (game_grid[3] == "O") and (game_grid[4] == "O") and (game_grid[5] == "O"):
+        end_game_comp()
+    if (game_grid[6] == "O") and (game_grid[7]== "O") and (game_grid[8] == "O"):
+        end_game_comp()
+    if (game_grid[0] == "O") and (game_grid[3] == "O") and (game_grid[6] == "O"):
+        end_game_comp()
+    if (game_grid[1] == "O") and (game_grid[4] == "O") and (game_grid[7] == "O"):
+        end_game_comp()
+    if (game_grid[2] == "O") and (game_grid[5] == "O") and (game_grid[8] == "O"):
+        end_game_comp()
+    if (game_grid[0] == "O") and (game_grid[4] == "O") and (game_grid[8] == "O"):
+        end_game_comp()
+    if (game_grid[2] == "O") and (game_grid[4] == "O") and (game_grid[6] == "0"):
+        end_game_comp()
 
-
-
-
-def endGameP2():
+def end_game_comp():
     print("computer1 win")
+    comput
 
 def endGameP1():
     time.sleep(0.5)
@@ -147,10 +141,14 @@ def start_program():
 
     player_name = input("What is your name?   ")
 
-    user_input= input( f"{player_name}, To play, the game, type the letter 'P' ")
-    if user_input=="P":
+    user_input= input( f"{player_name}, To play, the game, type the letter 'p' ")
+    if user_input.lower()=="p":
         game_play()
 
+    else:
+        print("error")
+
+1
 
 
 
