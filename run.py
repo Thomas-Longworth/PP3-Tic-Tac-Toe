@@ -11,7 +11,7 @@ game_grid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 #These are variables for keeping the scores of the game
 computer_score=0
-
+player_score = 0
 draw_score=0
 
 
@@ -127,8 +127,9 @@ def end_game_comp():
     print("computer1 win")
     computer_score +=1
 def endGameP1():
+    global player_score
     game_board()
-    player_score=0
+    
 
     player_score +=1
 
@@ -142,11 +143,12 @@ def endGameP1():
 
     end_input = input("would you like to play again?")
     
-   
-
     reset_game()
 
+
 def start_program():
+
+
     for char in instructions:
         sys.stdout.write(char)
         sys.stdout.flush()
