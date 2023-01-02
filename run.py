@@ -13,6 +13,7 @@ game_grid = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 computer_score=0
 player_score = 0
 draw_score=0
+current_scores = f"Player: {player_score}-----Computer: {computer_score}------Draws:{draw_score} "
 
 
 #Instructions for plaing the game
@@ -126,8 +127,10 @@ def checkCompWin():
 def end_game_comp():
     print("computer1 win")
     computer_score +=1
+
 def endGameP1():
     global player_score
+    
     game_board()
     
 
@@ -137,13 +140,22 @@ def endGameP1():
     print("....")
     print("player 1 win")
     time.sleep(0.5)
-  
-    print(player_score)
 
-
-    end_input = input("would you like to play again?")
+    time.sleep(0.5)
+    print("Calulating scores")
+    print("....")
+    print("--------------------------------------")
+    print(f"Player score: {player_score}")
+    print(f"Computer score: {computer_score}")
+    print("--------------------------------------")
     
-    reset_game()
+    
+    
+
+
+    input_reset= input("To play the game, type the letter 'p' \n ")
+    if user_reset.lower()=="p":
+        reset_game()
 
 
 def start_program():
