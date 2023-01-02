@@ -52,7 +52,7 @@ def game_play():
 # Function for the computer to play on the board
 def computer_play():
     compPlay = random.randint(0, 8)
-    
+
 
     if (game_grid[compPlay] == "X") or (game_grid[compPlay] == "O"):
         computer_play()
@@ -150,7 +150,6 @@ def end_game_player():
     print("   ")
     print("Type the letter s to reset the game")
     
-    
 
     while True:
         input_reset= input().strip().lower()
@@ -175,16 +174,13 @@ def start_program():
     print("------------------")
     time.sleep(0.5)
 
-
     player_name = input("What is your name?   ")
     print(f"{player_name}, Type the letter s to start the game")
    
-
-
     while True:
         user_start_input = input().strip().lower()
         if user_start_input == "s":
-              game_play()
+            game_play()
         
         else:
             print("Wrong input, please use the letter s")
