@@ -4,7 +4,6 @@
 
 
 
-
 ## How to play
 
 
@@ -24,12 +23,14 @@ will be a draw.
 The player plays against the computer. 
 The computer generates a random number between 1 and 8 to play.
 
+### Winning game
+When the player/computer gets three symbols in a row, the game ends.
 
 ### Score keeping
 After the player or computer wins, the number of wins is recorded and displayed.
 
 ### Reset game
-The player can reset the game and play again
+The player can reset the game and play again. This clears the gameboard and allows to be played again.
 
 
 
@@ -37,8 +38,8 @@ The player can reset the game and play again
 I have tested the game with the following:
 
 - It passed through CI Python Linter with no major issues.
-- I tested the game in vscode terminal and on Heroku
-- I tried playing invalid grid numbers and inputs while playing the game
+- I tested the game in vscode terminal and on Heroku.
+- I tried playing invalid grid numbers and inputs while playing the game.
 
 
 # Bugs 
@@ -49,7 +50,7 @@ However I fixed this with global keyword in the function.
 
 ## Unsolved bugs 
 - I was trying to figure out a way to declare the game a draw but I ran out of time to solve this problem.
-- When the player doesnt play an interger, the program crashes
+- When the player doesnt play an integer, the program crashes sometimes.
 
 
 # Deployment 
