@@ -17,7 +17,8 @@ instructions = """Welcome to the this Tic Tac Toe game,
 * A winner is decided when the player or computer gets
 three symbols in a row,
 * If all 9 grid places are played with no winners it,
-will be a draw."""
+will be a draw.
+"""
 sample_grid = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
 
 # Function for displaying the game board
@@ -33,10 +34,12 @@ def game_play():
     game_board()
     play_1 = int(input("Please enter your number 0-8   "))
 
+    
+
     if play_1 < 0 or play_1 > 8:
         print("please choose number between 0 and 8!!!!!!!")
         game_play()
-    if (game_grid[play_1] == "X") or (game_grid[play_1] == "O"):
+    elif (game_grid[play_1] == "X") or (game_grid[play_1] == "O"):
         print("Please Choose a number thats not already been played")
         game_play()
     else:
@@ -49,6 +52,7 @@ def game_play():
 # Function for the computer to play on the board
 def computer_play():
     compPlay = random.randint(0, 8)
+    
 
     if (game_grid[compPlay] == "X") or (game_grid[compPlay] == "O"):
         computer_play()
@@ -62,6 +66,7 @@ def computer_play():
 
         game_grid[compPlay] = "O"
         check_comp_win()
+    
 
     game_play()
 
@@ -142,10 +147,19 @@ def end_game_player():
     print(f"Player score: {player_score}")
     print(f"Computer score: {computer_score}")
     print("--------------------------------------")
+    print("   ")
+    print("Type the letter s to reset the game")
     
-    input_reset = input("To play the game again, type the letter 'p' \n ")
-    if input_reset.lower() == "p":
-        reset_game()
+    
+
+    while True:
+        input_reset= input().strip().lower()
+        if input_reset == "s":
+            reset_game()
+        
+        else:
+            print("Wrong input, please use the letter s")
+  
 
 # This is the initial function for starting the game
 def start_program():
@@ -153,7 +167,6 @@ def start_program():
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(0.05)
-
     time.sleep(0.5)
     print("------------------")
     print("  " + sample_grid[0] + "  |  " + sample_grid[1] + "  |  " + sample_grid[2])
@@ -162,12 +175,23 @@ def start_program():
     print("------------------")
     time.sleep(0.5)
 
+
     player_name = input("What is your name?   ")
-    user_input = input (f"{player_name}, To play the game, type the letter 'p' \n")
-    if user_input.lower() == "p":
-        game_play()
-    else:
-        print("error")
+    print(f"{player_name}, Type the letter s to start the game")
+   
+
+
+    while True:
+        user_start_input = input().strip().lower()
+        if user_start_input == "s":
+              game_play()
+        
+        else:
+            print("Wrong input, please use the letter s")
+  
+
+
+
 
 # This function restarts the game
 def reset_game():
