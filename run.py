@@ -22,7 +22,7 @@ instructions = """Welcome to the this Tic Tac Toe game,
 * The player can play by choosing a number from 0-8,
 * A winner is decided when the player or computer gets
 three symbols in a row,
-* If all 9 grid places are played with no winners it 
+* If all 9 grid places are played with no winners it, 
 will be a draw. 
 """
 sample_grid=["0", "1", "2", "3", "4", "5", "6", "7", "8"]
@@ -40,34 +40,37 @@ def game_board():
 
 #This is the function for the main gameplay loop
 def game_play ():
+    
     game_board()
-    play1 = int(input("player one enter your number   "))
-    if play1 < 0 or play1 > 8:
+    play_1 = int(input("Please enter your number 0-8   "))
+    
+    if play_1 < 0 or play_1 > 8:
         print("please choose number between 0 and 8!!!!!!!")
         game_play() 
     
 
-    if (game_grid[play1]=="X" ) or (game_grid[play1]=="O"):
+    if (game_grid[play_1]=="X" ) or (game_grid[play_1]=="O"):
         print("Please Choose a number thats not already been played")
         game_play()
 
     else:
-        game_grid[play1]="X"
-        checkP1win()
-
+        game_grid[play_1]="X"
+        time.sleep(0.5)
+        check_player_win()
+ 
     game_board()
    
     
-    computerPlay()
+    computer_play()
 
 #Function for the computer to play on the board
-def computerPlay():
+def computer_play():
 
     compPlay = random.randint(0,8)
     
    
-    if (game_grid[compPlay]=="X" ) or (game_grid[compPlay]=="O"):
-        computerPlay()
+    if (game_grid[compPlay]=="X") or (game_grid[compPlay]=="O"):
+        computer_play()
     elif game_grid[compPlay]=="-":
         print("Computer playing....")
         time.sleep(0.5)
@@ -77,33 +80,34 @@ def computerPlay():
         time.sleep(0.5)
 
         game_grid[compPlay]="O"
+        check_comp_win()
 
     
-    game_board()
+    
     game_play()
 
 
-def checkP1win():
+def check_player_win():
     if (game_grid[0] == "X") and (game_grid[1] == "X") and (game_grid[2] == "X"):
-        endGameP1()       
+        end_game_player()       
     elif (game_grid[3] == "X") and (game_grid[4] == "X") and (game_grid[5]== "X"):
-        endGameP1()
+        end_game_player()   
     elif (game_grid[6] == "X") and (game_grid[7] == "X") and (game_grid[8] == "X"):
-        endGameP1()
+        end_game_player()   
     elif (game_grid[0] == "X") and (game_grid[3] == "X") and (game_grid[6]== "X"):
-        endGameP1()
+        end_game_player()   
     elif (game_grid[1]== "X") and (game_grid[4]== "X") and (game_grid[7]== "X"):
-        endGameP1()
+        end_game_player()   
     elif (game_grid[2] == "X") and (game_grid[5]== "X") and (game_grid[8]== "X"):
-        endGameP1()
+        end_game_player()   
     elif (game_grid[0]== "X") and (game_grid[4] == "X") and (game_grid[8] == "X"):
-        endGameP1()
+        end_game_player()   
     elif (game_grid[2] == "X") and (game_grid[4] == "X") and (game_grid[6] == "X"):
-        endGameP1()
+        end_game_player()   
     
 
-def checkCompWin():
-    if (game_grid[O] == "O") and (game_grid[1] == "O") and (game_grid[2] == "O"):
+def check_comp_win():
+    if (game_grid[0] == "O") and (game_grid[1] == "O") and (game_grid[2] == "O"):
         end_game_comp()
     if (game_grid[3] == "O") and (game_grid[4] == "O") and (game_grid[5] == "O"):
         end_game_comp()
@@ -117,7 +121,7 @@ def checkCompWin():
         end_game_comp()
     if (game_grid[0] == "O") and (game_grid[4] == "O") and (game_grid[8] == "O"):
         end_game_comp()
-    if (game_grid[2] == "O") and (game_grid[4] == "O") and (game_grid[6] == "0"):
+    if (game_grid[2] == "O") and (game_grid[4] == "O") and (game_grid[6] == "O"):
         end_game_comp()
 
 
@@ -125,24 +129,43 @@ def checkCompWin():
 
 
 def end_game_comp():
-    print("computer1 win")
+    global computer_score
+    game_board()
+
     computer_score +=1
 
-def endGameP1():
+    time.sleep(0.5)
+    print("....")
+    print("The computer wins")
+    time.sleep(1)
+    
+    print("Calulating scores")
+    print("....")
+    time.sleep(0.5)
+    print("--------------------------------------")
+    print(f"Player score: {player_score}")
+    print(f"Computer score: {computer_score}")
+    print("--------------------------------------")
+
+    input_reset= input("To play the game again, type the letter 'p' \n ")
+    if input_reset.lower()=="p":
+        reset_game()
+
+
+def end_game_player()   :
     global player_score
-    
     game_board()
-    
 
     player_score +=1
 
     time.sleep(0.5)
     print("....")
-    print("player 1 win")
-    time.sleep(0.5)
+    print("Player wins")
+    time.sleep(1)
 
-    time.sleep(0.5)
+    
     print("Calulating scores")
+    time.sleep(0.5)
     print("....")
     print("--------------------------------------")
     print(f"Player score: {player_score}")
@@ -153,13 +176,12 @@ def endGameP1():
     
 
 
-    input_reset= input("To play the game, type the letter 'p' \n ")
-    if user_reset.lower()=="p":
+    input_reset = input("To play the game again, type the letter 'p' \n ")
+    if input_reset.lower()=="p":
         reset_game()
 
 
 def start_program():
-
 
     for char in instructions:
         sys.stdout.write(char)
@@ -180,7 +202,6 @@ def start_program():
     user_input= input( f"{player_name}, To play the game, type the letter 'p' \n ")
     if user_input.lower()=="p":
         game_play()
-
     else:
         print("error")
 
