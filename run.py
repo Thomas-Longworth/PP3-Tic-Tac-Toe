@@ -32,7 +32,11 @@ def game_board():
 # This is the function for the main gameplay loop
 def game_play():
     game_board()
-    play_1 = int(input("Please enter your number 0-8   "))
+    try:
+        play_1 = int(input("Please enter your number 0-8   "))
+    except ValueError:
+        print("Invalid input. Please enter a number between 0 and 8.")
+        game_play()
 
     
 
@@ -144,7 +148,7 @@ def end_game_player():
     time.sleep(0.5)
     print("....")
     print("--------------------------------------")
-    print(f"Player score: {player_score}")
+    print(f" Human : {player_score}")
     print(f"Computer score: {computer_score}")
     print("--------------------------------------")
     print("   ")
