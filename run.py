@@ -70,7 +70,9 @@ def computer_play():
 
         game_grid[compPlay] = "O"
         check_comp_win()
-    
+
+       
+        
 
     game_play()
 
@@ -92,7 +94,16 @@ def check_player_win():
         end_game_player()   
     elif (game_grid[2] == "X") and (game_grid[4] == "X") and (game_grid[6] == "X"):
         end_game_player()   
+
+    check_draw()
     
+
+def check_draw():
+
+    if all(elem == "X" or elem == "O" for elem in game_grid):
+        end_game_draw()
+    else:
+        computer_play()
 # This function checks if the computer has won the game
 def check_comp_win():
     if (game_grid[0] == "O") and (game_grid[1] == "O") and (game_grid[2] == "O"):
@@ -126,7 +137,7 @@ def end_game_comp():
     print("....")
     time.sleep(0.5)
     print("--------------------------------------")
-    print(f"Player score: {player_score}")
+    print(f"Human Score: {player_score}")
     print(f"Computer score: {computer_score}")
     print("--------------------------------------")
 
@@ -148,7 +159,7 @@ def end_game_player():
     time.sleep(0.5)
     print("....")
     print("--------------------------------------")
-    print(f" Human : {player_score}")
+    print(f"Human score : {player_score}")
     print(f"Computer score: {computer_score}")
     print("--------------------------------------")
     print("   ")
@@ -163,6 +174,33 @@ def end_game_player():
         else:
             print("Wrong input, please use the letter s")
   
+
+def end_game_draw():
+    global computer_score
+    global player_score
+    game_board()
+    computer_score += 1
+    player_score += 1
+
+
+    time.sleep(0.5)
+    print("....")
+    print("Its a draw!!")
+    time.sleep(1)
+    print("Calulating scores")
+    print("....")
+    time.sleep(0.5)
+    print("--------------------------------------")
+    print(f"Human score: {player_score}")
+    print(f"Computer score: {computer_score}")
+    print("--------------------------------------")
+
+    input_reset= input("To play the game again, type the letter 'p' \n ")
+    if input_reset.lower() == "p":
+        reset_game()
+
+
+
 
 # This is the initial function for starting the game
 def start_program():
