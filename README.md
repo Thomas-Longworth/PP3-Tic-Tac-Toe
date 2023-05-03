@@ -4,30 +4,35 @@
 
 <br>
 
+<br>
 
-##### Table of Contents  
+## Table of Contents  
 
 <br>
 
-[About](#about)  
-[How to play](#how-to-play)  
-
-[Ux](#about)  
-[Features](#how-to-play)  
-[Testing](#about)  
-[Exception/Error testing:](#how-to-play) 
-[Bugs](#how-to-play)  
-[Deployment](#about)  
-[Testing](#how-to-play)  
-
+- [About](#about) 
+- [How to play](#how-to-play)  
+- [Ux](#ux)  
+- [Features](#features)  
+- [Testing](#testing)  
+- [Exception and Error handling](#exception-and-error-handling)
+- [Bugs](#bugs)  
+- [Deployment](#deployement)  
+- [Credits](#credits)  
 
 
 
+<br>
 
 ------------
 
+<br>
 
 ## About
+
+<br>
+
+[Link to live game](https://tic-tac-toe-terminal.herokuapp.com/)
 
 <br>
 
@@ -35,12 +40,15 @@ This Tic Tac Toe game is a classic two-player game where the player competes aga
 
 In this particular version of the game, the computer opponent chooses its moves randomly on the board, providing an unpredictable challenge for the player. The game is played entirely through the terminal, with the player and computer taking turns placing their markers on the board.
 
+<br>
+
 -------------
 
 <br>
 
 ## How to play
 
+<br>
 
 * The game board is 3x3 grid as shown below,
 * The player can play by choosing a number from 0-8,
@@ -49,16 +57,26 @@ three symbols in a row. This can be horizontally, vertically or diagnoal
 * If all 9 grid places are played with no winners it,
 will be a draw.
 
-![game](images/game-board.JPG)
+<br>
+
+![game](images/grid.JPG)
+
+<br>
 
 -------------
+
+<br>
+
+
 
 
 
 ## Ux
 
+<br>
 
-### Website owners goals
+
+### Website goals
 
 <br>
 
@@ -67,6 +85,8 @@ will be a draw.
 - Provide the user with  an easy to play tic tac toe game against computer.
 - Provide up to date score keeping.
 - Allow user to play again.
+
+<br>
 
 ### User goals
 
@@ -80,30 +100,60 @@ will be a draw.
 
 --------
 
+<br>
+
 
 ## Features 
 
 <br>
 
 ### Computer
-The player plays against the computer. 
-The computer generates a random number between 1 and 8 to play.
-
-### Winning game
-When the player/computer gets three symbols in a row, the game ends.
-
-### Draw game 
-If all the board has been played with no winner, it is declared a draw
-
-### Score keeping
-After the player or computer wins, the number of wins is recorded and displayed.
 
 <br>
+
+- The player plays against the computer. 
+- The computer generates a random number between 1 and 8 to play.
+
+<br>
+
+### Winning game
+
+<br>
+
+- When the player/computer gets three symbols in a row, the game ends.
+
+<br>
+
 ![game](images/score.JPG)
+
+<br>
+
+### Draw game 
+
+<br>
+
+- If all the board has been played with no winner, it is declared a draw
+
+<br>
+
+### Score keeping
+
+<br>
+
+- After the player or computer wins, the number of wins is recorded and displayed. One point is added for a win. A draw is one point each.
+
+<br>
+
+![game](images/score.JPG)
+
+<br>
 
 
 ### Reset game
-The player can reset the game and play again. This clears the gameboard and allows to be played again.
+
+<br>
+
+- he player can reset the game and play again. This clears the gameboard and allows the game to be played again.
 
 
 <br>
@@ -116,14 +166,17 @@ The player can reset the game and play again. This clears the gameboard and allo
 ## Testing
 
 <br>
-
 I have tested the game with the following:
+
+<br>
 
 - It passed through CI Python Linter with no major issues. I left the "line too long" errors as they dont affect readability
 
 <br>
 
 ![game](images/lint.JPG)
+
+<br>
 
 - I tested the game in vscode terminal and on Heroku.
 
@@ -138,11 +191,11 @@ I have tested the game with the following:
 
 <br>
 
-## Exception/Error testing:
+## Exception and error handling:
 
 <br>
 
-If the user doesnt enter an integer(0,8) to play the board, they recieve the following prompt:
+- If the user doesnt enter an integer(0,8) to play the board, they recieve the following prompt:
 
 <br>
 
@@ -152,7 +205,7 @@ If the user doesnt enter an integer(0,8) to play the board, they recieve the fol
 <br>
 
 
-If the user enters a non interger input to play the board, they recieve the following prompt:
+- If the user enters a non interger input to play the board, they recieve the following prompt:
 
 <br>
 
@@ -170,6 +223,8 @@ If the user enters a non interger input to play the board, they recieve the foll
 
 ## Bugs 
 
+<br>
+
 ## Solved bugs
 
 <br>
@@ -178,9 +233,17 @@ If the user enters a non interger input to play the board, they recieve the foll
 - I had an issue with some functions not being able to change variables that were declared somewhere else.
 However I fixed this with global keyword in the function.
 
+
+<br>
+
 -----------------
 
+
+<br>
+
 ## Deployment 
+
+<br>
 
 - Sign up/ login to heroku.
 
@@ -190,10 +253,16 @@ However I fixed this with global keyword in the function.
 
 - Click Deploy.
 
+<br>
+
+--------
+
+<br>
 
 
 
 ## Credits
+
 
 <br>
 
@@ -209,3 +278,7 @@ However I fixed this with global keyword in the function.
 
 - Code institute for the terminal deployement
 
+<br>
+
+
+------------
