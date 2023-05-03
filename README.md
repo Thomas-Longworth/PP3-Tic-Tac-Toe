@@ -2,7 +2,42 @@
 
 ![Main](images/res.JPG)
 
+<br>
 
+
+##### Table of Contents  
+
+<br>
+
+[About](#about)  
+[How to play](#how-to-play)  
+
+[Ux](#about)  
+[Features](#how-to-play)  
+[Testing](#about)  
+[Exception/Error testing:](#how-to-play) 
+[Bugs](#how-to-play)  
+[Deployment](#about)  
+[Testing](#how-to-play)  
+
+
+
+
+
+------------
+
+
+## About
+
+<br>
+
+This Tic Tac Toe game is a classic two-player game where the player competes against the computer. The game board is a 3x3 grid, and the objective is to place three of your markers (either "X" or "O") in a row, column, or diagonal before the computer does
+
+In this particular version of the game, the computer opponent chooses its moves randomly on the board, providing an unpredictable challenge for the player. The game is played entirely through the terminal, with the player and computer taking turns placing their markers on the board.
+
+-------------
+
+<br>
 
 ## How to play
 
@@ -15,6 +50,8 @@ three symbols in a row. This can be horizontally, vertically or diagnoal
 will be a draw.
 
 ![game](images/game-board.JPG)
+
+-------------
 
 
 
@@ -46,6 +83,8 @@ will be a draw.
 
 ## Features 
 
+<br>
+
 ### Computer
 The player plays against the computer. 
 The computer generates a random number between 1 and 8 to play.
@@ -53,15 +92,31 @@ The computer generates a random number between 1 and 8 to play.
 ### Winning game
 When the player/computer gets three symbols in a row, the game ends.
 
+### Draw game 
+If all the board has been played with no winner, it is declared a draw
+
 ### Score keeping
 After the player or computer wins, the number of wins is recorded and displayed.
+
+<br>
+![game](images/score.JPG)
+
 
 ### Reset game
 The player can reset the game and play again. This clears the gameboard and allows to be played again.
 
 
+<br>
+
+----------
+
+<br>
+
 
 ## Testing
+
+<br>
+
 I have tested the game with the following:
 
 - It passed through CI Python Linter with no major issues. I left the "line too long" errors as they dont affect readability
@@ -69,22 +124,63 @@ I have tested the game with the following:
 <br>
 
 ![game](images/lint.JPG)
+
 - I tested the game in vscode terminal and on Heroku.
+
+<br>
+
 - I tried playing invalid grid numbers and inputs while playing the game.
 
 
-# Bugs 
+<br>
+
+---------------
+
+<br>
+
+## Exception/Error testing:
+
+<br>
+
+If the user doesnt enter an integer(0,8) to play the board, they recieve the following prompt:
+
+<br>
+
+
+![game](images/input2.JPG)
+
+<br>
+
+
+If the user enters a non interger input to play the board, they recieve the following prompt:
+
+<br>
+
+![game](images/input.JPG)
+
+
+
+
+<br>
+
+--------
+
+<br>
+
+
+## Bugs 
 
 ## Solved bugs
+
+<br>
+
+
 - I had an issue with some functions not being able to change variables that were declared somewhere else.
 However I fixed this with global keyword in the function.
 
-## Unsolved bugs 
-- I was trying to figure out a way to declare the game a draw but I ran out of time to solve this problem.
-- When the player doesnt play an integer, the program crashes sometimes.
+-----------------
 
-
-# Deployment 
+## Deployment 
 
 - Sign up/ login to heroku.
 
@@ -99,9 +195,17 @@ However I fixed this with global keyword in the function.
 
 ## Credits
 
+<br>
+
 #### Content
+
+<br>
+
 - For the Python, I got some ideas from Sentdex on Youtube
 
 #### Deployent
-- Code institute for the terminal
+
+<br>
+
+- Code institute for the terminal deployement
 
