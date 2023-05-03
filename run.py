@@ -186,7 +186,7 @@ def end_game_player():
         if input_reset == "p":
             reset_game()
         else:
-            print("Wrong input, please use the letter s")
+            print("Wrong input, please use the letter p")
 
 # Function to end the game as draw
 
