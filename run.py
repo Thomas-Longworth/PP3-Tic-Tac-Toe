@@ -146,10 +146,16 @@ def end_game_comp():
     print(f"Human Score: {player_score}")
     print(f"Computer score: {computer_score}")
     print("--------------------------------------")
+    time.sleep(0.5)
+    print("Type the letter p to play agin")
 
-    input_reset = input("To play the game again, type the letter 'p' \n ")
-    if input_reset.lower() == "p":
-        reset_game()
+    while True:
+
+        input_reset = input().strip().lower()
+        if input_reset == "p":
+            reset_game()
+        else:
+            print("Wrong input, please use the letter p")
 
 # This function executes when the Player has won a game
 
@@ -171,11 +177,13 @@ def end_game_player():
     print(f"Computer score: {computer_score}")
     print("--------------------------------------")
     print("   ")
-    print("Type the letter s to reset the game")
+    time.sleep(0.5)
+    print("Type the letter p to play agin")
 
     while True:
+
         input_reset = input().strip().lower()
-        if input_reset == "s":
+        if input_reset == "p":
             reset_game()
         else:
             print("Wrong input, please use the letter s")
@@ -201,10 +209,16 @@ def end_game_draw():
     print(f"Computer score: {computer_score}")
     print("--------------------------------------")
 
-    input_reset = input("To play the game again, type the letter 'p' \n ")
-    if input_reset.lower() == "p":
-        reset_game()
+    time.sleep(0.5)
+    print("Type the letter p to play agin")
 
+    while True:
+
+        input_reset = input().strip().lower()
+        if input_reset == "p":
+            reset_game()
+        else:
+            print("Wrong input, please use the letter p")
 
 # This is the initial function for starting the game
 
