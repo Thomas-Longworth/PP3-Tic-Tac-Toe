@@ -37,7 +37,11 @@ The player can reset the game and play again. This clears the gameboard and allo
 ## Testing
 I have tested the game with the following:
 
-- It passed through CI Python Linter with no major issues.
+- It passed through CI Python Linter with no major issues. I left the "line too long" errors as they dont affect readability
+
+<br>
+
+![game](images/lint.JPG)
 - I tested the game in vscode terminal and on Heroku.
 - I tried playing invalid grid numbers and inputs while playing the game.
 

@@ -177,10 +177,9 @@ def end_game_player():
         input_reset = input().strip().lower()
         if input_reset == "s":
             reset_game()
-        
         else:
             print("Wrong input, please use the letter s")
-  
+
 # Function to end the game as draw
 
 
@@ -225,15 +224,12 @@ def start_program():
 
     player_name = input("What is your name?   ")
     print(f"{player_name}, Type the letter s to start the game")
-   
     while True:
         user_start_input = input().strip().lower()
         if user_start_input == "s":
             game_play()
-        
         else:
             print("Wrong input, please use the letter s")
-  
 
 # This function restarts the game
 
@@ -253,4 +249,3 @@ def reset_game():
 
 
 start_program()
-
