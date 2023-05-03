@@ -17,6 +17,33 @@ will be a draw.
 ![game](images/game-board.JPG)
 
 
+
+## Ux
+
+
+### Website owners goals
+
+<br>
+
+
+- Give insturctions about the game and how to play.
+- Provide the user with  an easy to play tic tac toe game against computer.
+- Provide up to date score keeping.
+- Allow user to play again.
+
+### User goals
+
+<br>
+
+
+- The goal of this program is to play a game of Tic Tac Toe against the computer who plays randomly on the board.
+- Easily navigate the inputs and instructions.
+
+<br>
+
+--------
+
+
 ## Features 
 
 ### Computer
